@@ -1,0 +1,94 @@
+.contenedor{
+    width: 95%; 
+    margin: auto;
+    background-color: rgba(0, 0, 0, 0.03);
+}
+/* contenedor titulo y controles*/
+.contenedor-titulo-controles{
+    display: flex; justify-content: space-between; align-items: end;
+} 
+.contenedor-titulo-controles h3{
+    color: black; font-size: 30px;
+}
+.contenedor-titulo-controles .indicadores button{
+    background-color: #000; height: 5px; width: 15px; cursor: pointer; border: none; margin-right: 2px;
+}
+.contenedor-titulo-controles .indicadores button:hover,
+.contenedor-titulo-controles .indicadores button.activo{
+    background:red;
+}
+/* contenedor principal y flechas*/
+.marcas-mostradas{
+    margin-bottom: 70px;
+}
+.marcas-mostradas .contenedor-principal{
+    display: flex; align-items: center; position: relative;
+}
+.marcas-mostradas .contenedor-principal .flecha-izq,
+.marcas-mostradas .contenedor-principal .flecha-der{
+    position: absolute; border: none; background-color: rgba(0, 0, 0, 0.3);
+    font-size: 40px; height: 30%; top: calc(50% -25%); line-height: 40px; 
+    width: 35px; color: white; cursor: pointer; z-index: 500; transition: .2s ease all;
+}
+.marcas-mostradas .contenedor-principal .flecha-izq:hover,
+.marcas-mostradas .contenedor-principal .flecha-der:hover{
+    background: rgba(0, 0, 0, 0.5);
+}
+
+.marcas-mostradas .contenedor-principal .flecha-izq{
+    left: 0;
+}
+
+.marcas-mostradas .contenedor-principal .flecha-der{
+    right:  0;
+}
+/* carousel*/
+.marcas-mostradas .contenedor-carousel{
+    width: 100%; padding: 20px 0; overflow: hidden;
+    scroll-behavior: smooth;
+}
+.marcas-mostradas .contenedor-carousel .carousel{
+display: flex; flex-wrap: nowrap;
+}
+/*Cuantas se alcanzan a ver en el carrousel*/           /*//*//*/*//*/*//**//*/**/
+.marcas-mostradas .contenedor-carousel .carousel .marcas{
+    margin: 20px; min-width: 20%; transition: .3s ease all; 
+    box-shadow: 5px 5px 10px rgba(0,0,0,.3);
+    background: white;
+}
+
+.marcas-mostradas .contenedor-carousel .carousel .marcas.hover{
+    transform: scale(1.2); transform-origin: center;
+}
+
+.marcas-mostradas .contenedor-carousel .carousel .marcas img{
+    width: 100%; vertical-align: top;
+}
+
+/* MediaQueris */
+@media screen and (max-width:800px) {
+    .marcas-mostradas .contenedor-carousel{
+        overflow: visible;
+    }
+    .marcas-mostradas .contenedor-carousel .carousel{
+        display: grid; grid-template-columns: repeat(3,1fr);
+        gap: 20px;
+    }
+    .marcas-mostradas .indicadores,
+    .marcas-mostradas .flecha-izq,
+    .marcas-mostradas .flecha-der{
+        display: none;
+    }
+}
+/* MediaQueris*/
+.img{
+  margin: 20px auto; border-radius: 5px; border: 1px solid#999;
+  padding: 13px; width: 1500px; height: 500px;
+  background-size: 100% 100%; background-repeat: no-repeat;
+  background:url("Imagenes/about.jpg");
+  background-size: cover; position: relative; font-style: italic;
+}
+.pp{
+    display: inline-block;
+ 
+}
